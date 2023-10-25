@@ -40,6 +40,8 @@ class StagedAppletFrame : public AppletFrame
     void nextStage();
     void previousStage();
 
+    void enterStage(int index, bool requestFocus);
+
     unsigned getCurrentStage();
     unsigned getStagesCount();
     unsigned isLastStage();
@@ -47,8 +49,6 @@ class StagedAppletFrame : public AppletFrame
   private:
     size_t currentStage = 0;
     std::vector<View*> stageViews;
-
-    void enterStage(int index, bool requestFocus);
 };
 
 } // namespace brls
